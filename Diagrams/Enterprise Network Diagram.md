@@ -1,52 +1,56 @@
-&#x20;                   Internet
+&#x20;                          Internet
 
-&#x20;                       │
+&#x20;                              │
 
-&#x20;               VirtualBox NAT
+&#x20;                        VirtualBox NAT
 
-&#x20;                 10.0.2.0/24
+&#x20;                              │
 
-&#x20;                       │
-
-──────────────────────────────────────────
-
-&#x20;       Internal Network (LABNET)
-
-&#x20;          192.168.10.0/24
-
-──────────────────────────────────────────
+&#x20;       ┌──────────────────────┴──────────────────────┐
 
 
 
-&#x20;     DC01
+&#x20;                Internal Network (LABNET)
 
-&#x20;     192.168.10.10
-
-&#x20;     AD DS
-
-&#x20;     DNS
+&#x20;                   192.168.10.0/24
 
 
 
-&#x20;         │
+&#x20;       ┌──────────────┬──────────────┬──────────────┐
+
+&#x20;       │              │              │
+
+&#x20;       │              │              │
+
+&#x20;    DC01           FILE01        CLIENT01
+
+&#x20;192.168.10.10   192.168.10.11   DHCP (.21)
 
 
 
-&#x20;     FILE01
+Roles:
 
-&#x20;     192.168.10.11
+──────────────────────────────────────────────
 
-&#x20;     File Services
+DC01
+
+• Active Directory
+
+• DNS
+
+• DHCP
 
 
 
-&#x20;         │
+FILE01
+
+• Enterprise File Server
 
 
 
-&#x20;     CLIENT01
+CLIENT01
 
-&#x20;     192.168.10.20
+• Domain Joined
 
-&#x20;     Domain Workstation
+• DHCP Client
 
